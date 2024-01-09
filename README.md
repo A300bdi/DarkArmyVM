@@ -8,7 +8,7 @@ DarkArmyVM is Offensive VM ("DarkArmyVM") is customizable, Windows-based securit
 
 __Requirements__
 ---
-__DarkArmyVM__ should only be installed on a virtual machine. The VM should satisfy the following requirements:
+__DarkArmyVM__ can be install on host computer but always windows 10 virtual machine is recommanded. The VM should satisfy the following requirements:
 
 + Windows >= 10
 + PowerShell >= 5
@@ -17,3 +17,9 @@ __DarkArmyVM__ should only be installed on a virtual machine. The VM should sati
 + Internet connection
 + Tamper Protection and any Anti-Malware solution (e.g., Windows Defender) Windows Defender disabled, preferably via Group Policy
 + Windows Updates Disabled
+
+<pre>
+  ---
+  Recommandation
+  ---
+</pre>
