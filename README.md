@@ -58,9 +58,48 @@ __Installation__
 
 __Credits__
 ---
-Supervised by Osamah Ahmed
-Dr.Mansoor Alam
-Dr. Jawaid Iqbal
+```Supervised by``` Osamah Ahmed
++ A300bdi @Abdullah Muhammad
++ Muhammad Taha Saif
++ Zeeshan Hayat
 
-Mr.Ahmed Nawaz
+
+Guided by
+---
++ Dr.Mansoor Alam
++ Dr. Jawaid Iqbal
++ Prof.Osama Raza
++ Mr.Ahmed Nawaz
++ Hasseb Ahmed
+
+__Disclaimer and Terms of Use for DarkArmy Penetration Testing Virtual Machine__
+
+`````` By using the DarkArmy Penetration Testing Virtual Machine ("the VM"), you agree to the following terms and conditions:
+
+1. **Legal Use Only:**
+   The VM, including any tools, scripts, or resources provided, is intended for legal and ethical penetration testing purposes only. Any unauthorized or illegal use of the VM is strictly prohibited.
+
+2. **No Malicious Activities:**
+   Users are prohibited from engaging in any malicious activities, including but not limited to unauthorized access, data breaches, or any activities that violate applicable laws.
+
+3. **Limited Liability:**
+   The creators, contributors, and maintainers of the VM are not responsible for any damages, legal consequences, or other liabilities resulting from the use of the VM. Use it at your own risk.
+
+4. **No Warranty:**
+   The VM is provided "as is" without any warranty or guarantee. The creators make no representations or warranties regarding the accuracy, functionality, or suitability for any purpose.
+
+5. **Acceptable Use:**
+   Users are expected to adhere to ethical standards and conduct when using the VM. Respect the privacy and security of others, and comply with relevant laws and regulations.
+
+6. **Third-Party Tools:**
+   The VM may include third-party tools, scripts, or resources. Users are responsible for complying with the terms of use and licenses associated with such tools.
+
+7. **Updates and Modifications:**
+   The creators reserve the right to update or modify the VM, including adding or removing tools, scripts, or resources, without prior notice.
+
+8. **Governing Law:**
+   This agreement is governed by and construed in accordance with the laws of [Your Jurisdiction]. Any legal actions or proceedings related to this agreement shall be within the exclusive jurisdiction of the courts of [Your Jurisdiction].
+
+By using the DarkArmy Penetration Testing Virtual Machine, you acknowledge that you have read, understood, and agreed to these terms and conditions. If you do not agree with these terms, do not use the VM.
+
 
