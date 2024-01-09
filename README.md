@@ -24,7 +24,7 @@ You MUST disable Windows Defender for a smooth install. The best way to accompli
 
 In Windows versions 1909 and higher, Tamper Protection was added. Tamper Protection must be disabled first, otherwise Group Policy settings are ignored.
 
-1. Open Windows Security (<pre>```type Windows Security```</pre> in the search box)
+1. Open Windows Security (```type Windows Security``` in the search box)
 Virus & threat protection > Virus & threat protection settings > Manage settings
 Switch Tamper Protection to Off
 It is not necessary to change any other setting (Real Time Protection, etc.)
