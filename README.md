@@ -27,16 +27,16 @@ In Windows versions 1909 and higher, Tamper Protection was added. Tamper Protect
 1. Open Windows Security (```type Windows Security``` in the search box)
 2. Virus & threat protection > Virus & threat protection settings > Manage settings
 3. Switch ```Tamper Protection``` to Off
-`````` It is not necessary to change any other setting (Real Time Protection, etc.)
+<pre></pre> It is not necessary to change any other setting (Real Time Protection, etc.)
 
-``````Important! Tamper Protection must be disabled before changing Group Policy settings.
+ Important! Tamper Protection must be disabled before changing Group Policy settings.
 
 To permanently disable Real Time Protection:
 
-Make sure you disabled Tamper Protection
+Make sure you disabled ```Tamper Protection```
 Open Local Group Policy Editor (type gpedit in the search box)
 Computer Configuration > Administrative Templates > Windows Components > Microsoft Defender Antivirus > Real-time Protection
-Enable Turn off real-time protection
+Enable Turn off ```real-time protection```
 Reboot
 Make sure to reboot before making the next change
 
