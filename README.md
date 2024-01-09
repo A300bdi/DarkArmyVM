@@ -18,8 +18,6 @@ __DarkArmyVM__ can be install on host computer but always windows 10 virtual mac
 + Tamper Protection and any Anti-Malware solution (e.g., Windows Defender) Windows Defender disabled, preferably via Group Policy
 + Windows Updates Disabled
 
-<pre>
-  ---
+<pre
   Recommandation
-  ---
 </pre>
