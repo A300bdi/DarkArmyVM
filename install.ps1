@@ -1,3 +1,34 @@
+# Specify the path to the image file you want to set as the wallpaper
+$wallpaperPath = "C:\Users\IEUser\Downloads\DarkArmyVM-main\DarkArmyVM-main\Dark_Army-red-f.jpg"
+
+# Use the SystemParametersInfo function to set the desktop wallpaper
+Add-Type -TypeDefinition @"
+    using System;
+    using System.Runtime.InteropServices;
+
+    public class Wallpaper {
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+    }
+"@
+
+# Constants for SystemParametersInfo function
+$SPI_SETDESKWALLPAPER = 0x0014
+$SPIF_UPDATEINIFILE = 0x01
+$SPIF_SENDCHANGE = 0x02
+
+# Set the wallpaper without admin privileges
+try {
+    # Set the wallpaper for the current user
+    [Wallpaper]::SystemParametersInfo($SPI_SETDESKWALLPAPER, 0, $wallpaperPath, $SPIF_UPDATEINIFILE -bor $SPIF_SENDCHANGE)
+    
+    # Output success message
+    Write-Host "Desktop wallpaper changed to: $wallpaperPath"
+}
+catch {
+    # Output error message
+    Write-Host "Failed to change desktop wallpaper. Ensure the file exists and is accessible."
+}
 # Prompt the user for confirmation
 $confirmation = Read-Host "Are you sure you want to install Dark Army VM and penetration testing tools on your system? (Type 'y' to confirm)"
 
