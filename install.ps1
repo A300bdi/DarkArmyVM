@@ -76,6 +76,7 @@ if ($confirmation -eq 'y') {
     scoop bucket add nirsoft
     scoop bucket add main
     scoop bucket add nonportable
+    scoop bucket add versions
     
     # Install DNS Information Gathering Tools
     Write-Host "Installing DNS Information Gathering Tools..."
@@ -90,10 +91,13 @@ if ($confirmation -eq 'y') {
     
     scoop install main/dnsproxy
     Write-Host "- DNSProxy: A simple DNS proxy server."
+
+    scoop install nirsoft/dnsquerysniffer
+    Write-Host "- dnsquerysniffer: Network sniffer utility that shows the DNS queries sent on your system."
     
     # Install Network Monitoring Tools
     Write-Host "Installing Network Monitoring Tools..."
-    scoop install extras/wireshark
+    scoop install versions/wireshark3.6
     Write-Host "- Wireshark: A network protocol analyzer."
     
     scoop install extras/networkminer
@@ -113,6 +117,15 @@ if ($confirmation -eq 'y') {
     
     scoop install extras/zaproxy
     Write-Host "- ZAP Proxy: An OWASP tool for finding vulnerabilities in web applications."
+
+    scoop install extras/trafficmonitor
+    Write-Host "- trafficmonitor: Network monitoring floating window software on Windows. It can display the current network speed, CPU and memory usage. It also supports being embedded into the taskbar, theme changing and traffic statistics."
+
+    scoop install nirsoft/sniffpass
+    Write-Host "-sniffpass: capture the passwords that pass through your network adapter."
+
+    scoop install sysinternals/whois
+    Write-Host "- See who owns an Internet address."
     
     # Install Vulnerability Assessment Tools
     Write-Host "Installing Vulnerability Assessment Tools..."
@@ -133,7 +146,45 @@ if ($confirmation -eq 'y') {
     
     scoop install nonportable/burp-suite-pro-np
     Write-Host "- Burp-suite-pro: An application that comes with set of tools used for penetration and security testing of web application."
-    
+
+    scoop install versions/firefox-developer
+    Write-Host "- FireFox-esr: Extended Support Release of Firefox: the popular open source web browser."
+
+    scoop install extras/tor-browser
+    Write-Host "- tor-browser: Web browser that connects to the internet via the Tor anonymity network."
+
+    scoop install main/tor
+    Write-Host "- tor: Enables anonymous communication over the onion network (expert mode)."
+
+    scoop install extras/googlechrome
+    Write-Host "- google-chrome: Fast, secure, and free web browser, built for the modern web."
+
+    scoop install versions/beef-nightly
+    Write-Host "- Beef programming language compiler."
+
+    scoop install main/curl
+    Write-Host "- Curl: Command line tool and library for transferring data with URLs."
+
+    scoop install main/grep
+    Write-Host "- grep: Print lines matching a pattern."
+
+    scoop install main/wget
+    Write-Host "- wget: A command-line utility for retrieving files using HTTP, HTTPS, FTP, and FTPS protocols."
+
+    scoop install main/chisel
+    Write-Host "- chisel: A fast TCP tunnel over HTTP."
+
+    scoop install versions/traefik1
+    Write-Host "- traefik1: HTTP reverse proxy and load balancer (version 1)."
+
+    scoop install nirsoft/webcacheimageinfo
+    Write-Host "- webcacheimageinfo: Shows EXIF information of the images stored in Web browser cache."
+
+    scoop install nirsoft/webcookiessniffer
+    Write-Host "- webcookiessnifter: Captures Web site cookies and displays them in a simple table."
+
+    scoop install nirsoft/websitesniffer
+    Write-Host "- websitesniffer: Capture Web site files and save them on your hard drive."
     
     #Install spoofing and sniffing tools
     Write-Host "Installation of Spoofing and Sniffing Tools..."
@@ -142,7 +193,27 @@ if ($confirmation -eq 'y') {
     
     scoop install extras/mitmproxy
     Write-Host "- mitmproxy: A free and open source interactive HTTPS proxy."
-    
+
+    scoop install nirsoft/wirelessnetview
+    Write-Host "- Monitor the activity of wireless networks around you."
+
+    scoop install main/termshark
+    Write-Host "- termshark: A terminal UI for tshark, inspired by Wireshark."
+
+    scoop install nirsoft/networkconnectlog
+    Write-Host "- networkconnectlog: Shows a log of connected/disconnected computers on your network."
+
+    scoop install nirsoft/networkcounterswatch
+    Write-Host "- networkcounterswatch: Displays system counters for every network interface on your system."
+
+    scoop install extras/advanced-ip-scanner
+    Write-Host "- advaced-ip-scanner: Network scanner that can analyse LAN, show network devices, and provide remote control via RDP and Radmin."
+
+    scoop install extras/ipscan
+    Write-Host "- ipscan: Fast and friendly network scanner."
+
+    scoop install main/netcat
+    Write-Host "- netcat: Read and write from/to network connections."
     
     
     # Install Hash Cracking and Hash Information Tools
@@ -213,6 +284,17 @@ if ($confirmation -eq 'y') {
     
     scoop install main/radare2
     Write-Host "- radare2: UNIX-like reverse engineering framework and command-line toolset."
+
+    #Install servers 
+    Write-Host "Installing Servers"
+    scoop install extras/putty
+    Write-Host "- putty: A free implementation of SSH and Telnet, along with an xterm terminal emulator."
+
+    scoop install main/ngrok
+    Write-Host "- ngrok: Spend more time programming. One command for an instant, secure URL to your localhost server through any NAT or firewall."
+
+    scoop install main/nginx
+    Write-Host "- An HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server."
     
     #Install text editors
     Write-Host "Installing text editor for reporting..."
@@ -221,13 +303,38 @@ if ($confirmation -eq 'y') {
     
     scoop install extras/gedit
     Write-Host "- A powerful general purpose text editor."
+
+    # Get the path to the desktop
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+
+# Define the installation location
+$installLocation = "C:\Users\IEUser\scoop\apps"
+
+# Get a list of all installed programs
+$programs = Get-ChildItem -Path $installLocation -Directory
+
+# Loop through each installed program and create a shortcut on the desktop
+foreach ($program in $programs) {
+    $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$($program.Name).lnk"
+    $WshShell = New-Object -ComObject WScript.Shell
+    $shortcut = $WshShell.CreateShortcut($shortcutPath)
+    $shortcut.TargetPath = Join-Path -Path $installLocation -ChildPath $program.Name
+    $shortcut.Save()
+}
+
+Write-Output "Shortcuts for installed programs created on desktop."
+
+# Display ASCII Art
+Write-Host @"
+                                                                                          
+ / \---------------------------, 
+ \_,|                          | 
+    |    Powered by DarkArmy   | 
+    |  ,-------------------------
+    \_/________________________/        
+"@
+
     
     Write-Host "Installation completed successfully."
     
-    # Move installed tools to the desktop
-    Write-Host "Moving installed tools to the desktop..."
-    Get-ChildItem -Path $installDirectory | Move-Item -Destination $env:USERPROFILE\Desktop -Force
-    Write-Host "Tools moved to desktop."
-} else {
-    Write-Host "Installation aborted."
-}
+    
