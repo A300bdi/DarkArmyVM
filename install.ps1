@@ -305,27 +305,27 @@ if ($confirmation -eq 'y') {
     Write-Host "- A powerful general purpose text editor."
 
     # Get the path to the desktop
-$desktopPath = [Environment]::GetFolderPath("Desktop")
+    $desktopPath = [Environment]::GetFolderPath("Desktop")
 
-# Define the installation location
-$installLocation = "C:\Users\IEUser\scoop\apps"
+    # Define the installation location
+    $installLocation = "C:\Users\IEUser\scoop\apps"
 
-# Get a list of all installed programs
-$programs = Get-ChildItem -Path $installLocation -Directory
+    # Get a list of all installed programs
+    $programs = Get-ChildItem -Path $installLocation -Directory
 
-# Loop through each installed program and create a shortcut on the desktop
-foreach ($program in $programs) {
-    $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$($program.Name).lnk"
-    $WshShell = New-Object -ComObject WScript.Shell
-    $shortcut = $WshShell.CreateShortcut($shortcutPath)
-    $shortcut.TargetPath = Join-Path -Path $installLocation -ChildPath $program.Name
-    $shortcut.Save()
-}
+    # Loop through each installed program and create a shortcut on the desktop
+    foreach ($program in $programs) {
+        $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$($program.Name).lnk"
+        $WshShell = New-Object -ComObject WScript.Shell
+        $shortcut = $WshShell.CreateShortcut($shortcutPath)
+        $shortcut.TargetPath = Join-Path -Path $installLocation -ChildPath $program.Name
+        $shortcut.Save()
+    }
 
-Write-Output "Shortcuts for installed programs created on desktop."
+    Write-Output "Shortcuts for installed programs created on desktop."
 
-# Display ASCII Art
-Write-Host @"
+    # Display ASCII Art
+    Write-Host @"
                                                                                           
  / \---------------------------, 
  \_,|                          | 
@@ -334,7 +334,9 @@ Write-Host @"
     \_/________________________/        
 "@
 
+    # Success message
+    Write-Host -ForegroundColor Yellow -BackgroundColor Black "Installation completed successfully."
     
-    Write-Host "Installation completed successfully."
-    
-    
+} else {
+    Write-Host "Installation aborted by user."
+}
