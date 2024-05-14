@@ -20,6 +20,8 @@ __DarkArmyVM__ can be install on host computer but always windows 10 virtual mac
 __Installation Instructions__
 ----
 You MUST disable Windows Defender for a smooth install. The best way to accomplish this is through Group Policy.
+```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```
+and also unblock the file by typing ```Unblock-File -Path .\install.ps1```
 
 1. Open Windows Security (```type Windows Security``` in the search box)
 2. Virus & threat protection > Virus & threat protection settings > Manage settings
